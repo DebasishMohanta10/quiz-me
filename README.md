@@ -1,24 +1,14 @@
-# README
+# Quiz-me App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**A Quiz App for the students of School and University**
 
-Things you may want to cover:
+Quiz-me is a Quiz app for the students of School and Universities like *Quizlet* where students create quiz, and give exams and get their scores.
 
-* Ruby version
 
-* System dependencies
+Things Used for Quiz-me App:
 
-* Configuration
+* Ruby version : 3.0.2
 
-* Database creation
+* Rails : 6.1.4
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database : sqlite3
