@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.bigger-text{
+  font-size: large;
+}

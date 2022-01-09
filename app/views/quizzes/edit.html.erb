@@ -1,0 +1,17 @@
+<% provide(:title,"Edit Quiz") %>
+<h1>Edit Quiz</h1>
+<%= form_with model: quiz,url: quiz_path, method: :patch,local: true,scope: :quiz do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title,autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description,size: '12x7',class: "materialize-textarea" %>
+  </div>
+  <%= f.submit "Update Quiz",class: "btn waves-effect waves-light" %>
+<% end %>
+
+<br>
+<br>
+<br>

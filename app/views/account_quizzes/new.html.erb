@@ -1,0 +1,13 @@
+<% provide(:title,"Create a New Quiz") %>
+<h1>New Quiz</h1>
+<%= form_with model: quiz,url: account_quizzes_path, method: :post,local: true,scope: :quiz do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title,autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description,size: '12x7',class: "materialize-textarea" %>
+  </div>
+  <%= f.submit "Add Quiz",class: "btn" %>
+<% end %>

@@ -1,0 +1,56 @@
+<% provide(:title,"Quiz #{quiz.id}") %>
+
+<div class="card">
+  <div class="card-container blue" style="padding:2px">
+    <h3 class="white-text center"><%= quiz.title %></h3>
+  </div>
+  <div class="card-footer" style="padding:20px;">
+    <p class="grey-text text-darken-2">
+      Created by: <%= quiz.user.email %>
+    </p>
+    <p style="font-size:18px;"><%= quiz.description %></p>
+  </div>
+</div>
+
+<h2 class="center blue-text">Questions</h2>
+
+<% if quiz.user == current_user %>
+  <p style="font-size:18px" class="center"><%= link_to "New Question" ,new_quiz_mc_question_path(quiz) %></p>
+<% end %>
+<br>
+<div class="" style="padding-left:50px;">
+  <% quiz.mc_questions.each do |question| %>
+    <p style="font-size:18px">
+      <%= question.question %>
+      <%= link_to "🔍",question %>
+      <% if question.quiz.user == current_user %>
+        <%= link_to "🖋️",edit_mc_question_path(question) %>
+        <%= link_to "🗑️", question ,method: :delete,data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </p>
+    <% choices = [question.answer,question.distractor_1] %>
+    <% choices << question.distractor_2 if !question.distractor_2.blank? %>
+    <% choices.each do |c| %>
+      <div>
+        <% if c == question.answer %>
+          <p>
+            <label>
+                <input class="with-gap" name="<%= "guess_#{question.id}" %>" type="radio" disabled="disabled" checked />
+                <span><%= c %></span>
+            </label>
+          </p>
+        <% else %>
+          <p>
+            <label>
+                <input class="with-gap" name="<%= "guess_#{question.id}" %>" type="radio" disabled="disabled" />
+                <span><%= c %></span>
+            </label>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<br>
+<br>
+<br>

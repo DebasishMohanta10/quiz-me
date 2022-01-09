@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: mc_questions
+#
+#  id           :integer          not null, primary key
+#  answer       :string
+#  distractor_1 :string
+#  distractor_2 :string
+#  question     :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  quiz_id      :integer
+#
+# Indexes
+#
+#  index_mc_questions_on_quiz_id  (quiz_id)
+#
+# Foreign Keys
+#
+#  quiz_id  (quiz_id => quizzes.id)
+#
+
+one:
+  question: By default,every Rails model is a subclass of ?
+  answer: ActiveRecord
+  distractor_1: Object
+  distractor_2: ActiveModel
+
+two:
+  question: The command rails db:migrate updates the schema.rb file ?
+  answer: true
+  distractor_1: false
+  distractor_2: None of these

@@ -1,0 +1,20 @@
+<% provide(:title,"Make Questions") %>
+<h1>Multiple-Choice Questions</h1>
+<%= link_to "Add Question", new_quiz_mc_question_path %>
+<% questions.each do |question| %>
+  <div>
+    <p>
+      <%= question.question %>
+      <%= link_to "🔍",question %>
+      <%= link_to "🖋️",edit_mc_question_path(question) %>
+      <%= link_to "🗑️", question ,method: :delete,data: { confirm: "Are you sure?" } %>
+    </p>
+    <% choices = [question.answer,question.distractor_1,question.distractor_2] %>
+    <% choices.each do |c| %>
+      <div>
+        <%= radio_button_tag "guess_#{question.id}",c,checked = c == question.answer,disabled: true %>
+        <%= label_tag "guess_#{question.id}_#{c}",c %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

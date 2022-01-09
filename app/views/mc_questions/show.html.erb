@@ -1,0 +1,33 @@
+<% provide(:title,"Question #{question.id}") %>
+<br>
+<br>
+<p style="font-size:20px;">
+  <%= question.question %>
+  <% if question.quiz.user == current_user %>
+    <%= link_to "🖋️",edit_mc_question_path(question) %>
+    <%= link_to "🗑️", question ,method: :delete,data: { confirm: "Are you sure?" } %>
+  <% end %>
+</p>
+<% choices = [question.answer,question.distractor_1,question.distractor_2] %>
+<% choices.each do |c| %>
+  <div>
+    <% if c == question.answer %>
+      <p>
+        <label>
+            <input class="with-gap" name="<%= "guess_#{question.id}" %>" type="radio" disabled="disabled" checked />
+            <span><%= c %></span>
+        </label>
+      </p>
+    <% else %>
+      <p>
+        <label>
+            <input class="with-gap" name="<%= "guess_#{question.id}" %>" type="radio" disabled="disabled" />
+            <span><%= c %></span>
+        </label>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<br>
+<br>

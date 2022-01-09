@@ -12,3 +12,9 @@ Things Used for Quiz-me App:
 * Rails : 6.1.4
 
 * Database : sqlite3
+
+* Frontend-Framework : MaterializeCSS
+
+* HTML,CSS etc.
+
+Remember! This is only a Desktop version App.Don't try it on Mobile.Because I have not made it Ressponsive till Now. 

@@ -1,0 +1,52 @@
+<% provide(:title,"Welcome") %>
+
+<div class="section">
+  <h1 class="center pink-text">Welcome to QuizMe!</h1>
+  <p class="center blue-text" style="font-size: 20px;">QuizMe is a free <%= link_to "Quizlet","https://quizlet.com/",target: "_blank" %> style quizzing application that helps you learn by taking quizzes and trying to improve your score.</p>
+  <div class="center">
+    <%= image_tag "quiz-bubble.png",height: 300 %>
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="pink-text center">Features</h2>
+  <h5 class="blue-text center">QuizMe allows users to:</h5>
+  <br>
+  <div class="row">
+    <div class="col l4">
+      <div class="card blue hoverable">
+        <div class="card-image">
+          <%= image_tag "quiz2.jpg" %>
+        </div>
+        <div class="card-content">
+          <span class="card-title white-text">Choose Topics</span>
+          <p>Choose from premade quizzes on a variety of topics</p>
+        </div>
+      </div>
+    </div>
+    <div class="col l4">
+      <div class="card blue hoverable">
+        <div class="card-image">
+          <%= image_tag "quiz1.jpg" %>
+        </div>
+        <div class="card-content">
+          <span class="card-title white-text">Make own Quizzes</span>
+          <p>Make your own quizzes to customize your learning.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col l4">
+        <div class="card blue hoverable">
+          <div class="card-image">
+            <%= image_tag "quiz3.jpg" %>
+          </div>
+          <div class="card-content">
+            <span class="card-title white-text">Compare Scores</span>
+            <p>Compare your scores with other users</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <br>
+
+</div>
